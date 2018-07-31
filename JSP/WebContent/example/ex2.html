@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2018. 7. 26. ex2)</title>
+</head>
+<body>
+<form name="join_form" method="post" action="">
+	<!-- 바탕 테이블 -->
+	<table align="CENTER" border="1" cellpadding="5" cellspacing="0">
+	<tbody>
+	<tr>
+	<td align=center><!-- 외부 테두리 -->	
+		
+		<!-- 내부 테이블 -->
+		<table border="0" width="800" cellpadding="0" cellspacing="5" align="CENTER">
+		<tbody>
+		<tr>
+		<td align="center" width="800" colspan="3" bgcolor="#7BAAD6">
+		
+				<table cellspacing="2" cellpadding="1" bgcolor="#7BAAD6" border=0 width=100%>
+				<tbody>
+					<tr>
+						<td colspan="4" align="CENTER">
+						<FONT COLOR="#FFFFFF"><b>사용자등록</b>
+						<font color=black>(</font>
+						<font color=red>&nbsp;*&nbsp;</font>
+						<font color=black>표시항목은 반드시 입력하십시요.)</font>
+						</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">회원성명*</td>
+						<td bgcolor="ffffff">
+						<input type="text" id="name" size="20" maxlength="12">
+						&nbsp;성명은 빈칸없이 입력하세요.
+						</td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">주민등록번호*</td>
+						<td bgcolor="ffffff">
+						<input type="text" id="juminNumber" size="8" maxlength="6">
+						-
+						<input type="password" id="juminNumber" size="8" maxlength="7">
+						</td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">회원 ID*</td>
+						<td bgcolor="ffffff">
+						<input type="text" id="id" size="8" maxlength="16">
+						5~16자 이내의 영문이나 숫자만 가능
+						</td> 
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">비밀번호*</td>
+						<td bgcolor="ffffff">
+						<input type="password" id="pw" size="8" maxlength="12">
+						6~12자 이내의 영문이나 숫자만 가능
+						</td> 
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">비밀번호 확인*</td>
+						<td bgcolor="ffffff">
+						<input type="password" id="pw" size="8" maxlength="12">
+						비밀번호를 한번 더 입력해주세요.
+						</td> 
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">주소구분*</td>
+						<td bgcolor="ffffff">
+						<input type="radio" id="job_btn" value="1" checked="checked">직장(학교)
+						<input type="radio" id="job_btn" value="2">자택
+						</td> 
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">우편번호*</td>
+						<td bgcolor="ffffff">
+						<input type="text" id="postnum1" size="5" maxlength="5">
+						-
+						<input type="text" id="postnum2" size="5" maxlength="5">
+						</td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">주소*</td>
+						<td bgcolor="ffffff">
+						<input type=text name=address size=50 maxlength=100 value="">
+						</td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">전화번호*</td>
+					    <TD bgcolor="ffffff">
+                  		<input type=text name=tel1 size=4 maxlength=4 value="">
+                   		- 
+                  		<input type=text name=tel2 size=4 maxlength=4 value="">
+                   		-
+                  		<input type=text name=tel3 size=4 maxlength=4 value="">
+		                </td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">휴대전화*</td>
+						<TD bgcolor="ffffff">
+                  		<input type=text name=hand_tel1 size=4 maxlength=4 value="">
+                   		- 
+                  		<input type=text name=hand_tel2 size=4 maxlength=4 value="">
+                   		-
+                  		<input type=text name=hand_tel3 size=4 maxlength=4 value="">
+		                </td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">Email*</td>
+						<td bgcolor="ffffff" valign=middle>
+                		<input type=text name=e_mail size=30 maxlength=30 value="">
+                		</td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">공개여부*</td>
+					    <TD bgcolor="ffffff">
+                  		<input type=radio name="open_yn" value="Y" checked>예 
+                  		<input type=radio name="open_yn" value="N">아니오
+                		</td>
+					</tr>
+					
+					<tr>
+						<td bgcolor=#EFF4F8 width="110" align="center">자기소개</td>
+					    <TD bgcolor="ffffff">
+                  		<textarea cols=65 rows=5 name="intro"></textarea>
+                		</td>
+					</tr>
+				</tbody>
+				</table>
+				
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		<!-- 내부 테이블 -->
+	
+	</td>
+	</tr><!-- 외부 테두리 -->		
+	</tbody>
+	</table>
+	<!-- 바탕 테이블 -->
+</form>
+</body>
+</html>
