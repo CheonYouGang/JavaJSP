@@ -39,7 +39,7 @@
 		//	"values('" + name + "'," + "'" + id + "'," + "'" + password + "');";
 		String sql = "insert into userinfo(uname, id, password) values (?, ?, ?)";
 		pstmt = conn.prepareStatement(sql);
-		
+ 
 		pstmt.setString(1, name);
 		pstmt.setString(2, id);
 		pstmt.setString(3, password);

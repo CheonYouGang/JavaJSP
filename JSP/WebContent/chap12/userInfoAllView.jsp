@@ -20,7 +20,7 @@
 	
 	// Connection- 1단계: DB연결을 위한 커넥션 인터페이스(0순위)
 	Connection conn = null;
-	// Statement 인터페이스: SQL을 실행하는 객체
+	// Statement 인터페이스: SQL을 실행하는 객체 
 	Statement stmt = null;
 	// ResultSet 인터페이스: SQL결과를 저장하는 객체(select)
 	ResultSet rs = null;

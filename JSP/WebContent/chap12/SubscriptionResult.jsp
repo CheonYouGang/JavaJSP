@@ -12,7 +12,7 @@
 <title>2018. 8. 1. 회원가입 결과</title>
 
 <script type="text/javascript">
-function goto_userInfoAllView(){
+function goto_userInfoAllView(){ 
 	location.href="userInfoAllView.jsp";  // 페이지를 이동
 }
 </script>

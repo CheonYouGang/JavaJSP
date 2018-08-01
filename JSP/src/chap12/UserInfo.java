@@ -2,7 +2,7 @@ package chap12;
 /*
  *	sql 테이블의 userinfo의 컬럼명
  *	db의 데이터를 그대로 가져와 적용
- */
+ */ 
 public class UserInfo {
 	String uname = null;
 	String id = null;

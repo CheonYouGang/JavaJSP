@@ -16,7 +16,7 @@
 	<c:forEach var="userInfoList" items="${UserInfo}" varStatus="status">
 		No.${status.count}<br>
 		이름: ${userInfoList.uname}<br>
-		ID: ${userInfoList.id}<br>
+		ID: ${userInfoList.id}<br> 
 		PW: ${userInfoList.password}<br><br>
 	</c:forEach>
 

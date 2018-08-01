@@ -179,5 +179,5 @@ String url =
 <xml의 경우>
 useUnicode=true&amp;characterEncoding=utf8
 <jsp 프로젝트의 경우>
-useUnicode=true&characterEncoding=utf8
+useUnicode=true&characterEncoding=utf8 
 ==========================================================================================================================
