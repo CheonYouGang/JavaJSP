@@ -10,7 +10,9 @@
 </head>
 <body>
 	<h3>상품정보(뷰 페이지)</h3>
-<%-- 	코드: ${CODE}<br>
+<%--	GoodInfoReader.jsp 전용
+ 
+		코드: ${CODE}<br>
 		제목: ${TITLE}<br>
 		저자: ${WRITER}<br>
 		가격: <fmt:formatNumber value="${PRICE}" type="currency"/><br><br> --%>

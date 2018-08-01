@@ -15,6 +15,7 @@
 	<%
 		//리스트 먼저(여러개의 집합을 만들기 위해서)
 		ArrayList<GoodsInfo> goodsinfoList = new ArrayList<GoodsInfo>();
+		//bean클래스 객체 
 		GoodsInfo goodsInfo;
 		
 	
@@ -34,6 +35,7 @@
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
+			//rs.next() 끝날때 까지 읽어서 기록 저장(읽을 데이터가 없을 때까지 읽어옴)
 			while(rs.next()){
 				goodsInfo = new GoodsInfo();
 				
