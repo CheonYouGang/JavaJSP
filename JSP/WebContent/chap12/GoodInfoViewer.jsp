@@ -10,12 +10,12 @@
 </head>
 <body>
 	<h3>상품정보(뷰 페이지)</h3>
-<%--	GoodInfoReader.jsp 전용
+	GoodInfoReader.jsp 전용<br><br>
  
 		코드: ${CODE}<br>
 		제목: ${TITLE}<br>
 		저자: ${WRITER}<br>
-		가격: <fmt:formatNumber value="${PRICE}" type="currency"/><br><br> --%>
+		가격: <fmt:formatNumber value="${PRICE}" type="currency"/><br><br>
 		
 	<c:forEach var="goodsInfoList" items="${GoodsInfo}" varStatus="status">
 		No.${status.count}<br>

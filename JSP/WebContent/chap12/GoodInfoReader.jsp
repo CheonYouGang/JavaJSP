@@ -1,3 +1,4 @@
+<%@page import="chap12.GoodsInfo"%>
 <%@page import="java.sql.*"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@	page import="java.util.*"%>
@@ -19,7 +20,6 @@
 		// Statement 인터페이스: SQL을 실행하는 객체
 		Statement stmt = null;
 		try{
-			
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/webdb";
 			conn = DriverManager.getConnection(url, "root", "12345");

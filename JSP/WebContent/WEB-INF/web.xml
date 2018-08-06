@@ -219,4 +219,21 @@
   	<servlet-name>PersonInfo-Servlet</servlet-name>
   	<url-pattern>/pinfo</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>auto-create-db-pool-jsp</servlet-name>
+    <jsp-file>/AutoCreateDBPool.jsp</jsp-file>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- chap13 서블릿 클래스 -->
+  <servlet>
+  	<servlet-name>ex13-BBSList</servlet-name>
+  	<servlet-class>chap13.BBSListServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex13-BBSList</servlet-name>
+  	<url-pattern>/bbs-list</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
