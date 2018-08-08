@@ -1,0 +1,49 @@
+==============================================================
+1. file경로
+Tomcat v8.0 Server at localhost에 있는
+open launch configuration클릭해서
+argument클릭해서
+Dwtp.deploy에 있는 경로에서
+
+application.getRealPath("/files/" + fileName);
+
+에 등록된 "/files/"와 같은 이름의 폴더를 만들 것.
+==============================================================
+
+==============================================================
+2. commons-fileupload-1.2.2.jar
+
+예전에는 java의 jdk/jre/lib/ext에 넣어야 했지만 이젠 넣지 않아도 된다.
+(오히려 이것때문에 MultiPart multiPart = new MultiPart(request);부터 오류가 나버린다.)
+==============================================================
+
+==============================================================
+3. String url = String.format();
+
+String url = String.format
+			("UploadResult.jsp?TITLE=%s&DESCRIPTION=%s&FILE_NAME=%s"
+											 , title, description,fileName ); 에서
+		
+		UploadResult.jsp?는 'UploadResult.jsp페이지로 이동될 시'라는 조건문
+		
+		TITLE=%s&DESCRIPTION=%s&FILE_NAME=%s는
+		해당구문의 이전 페이지에 등록된
+		제목:	<input type="text" name="TITLE">				<br>
+		설명:	<input type="text" name="DESCRIPTION"> <br>
+		파일:	<input type="file" name="UPLOAD_FILE">	<br>
+		안에 있는 name값의 이름의 '%s=임의의 값'이다.
+		
+		그리고 TITLE=%s&DESCRIPTION=%s&FILE_NAME=%s과 맞는 값이 되야해서
+			String title = multiPart.getParameter("TITLE");
+			String description = multiPart.getParameter("DESCRIPTION");
+			String fileName = multiPart.getFileName("UPLOAD_FILE");
+			식으로
+			데이터 값을 받아오는 메소드
+			업로드 파일의 경로명을 리턴하는 메소드
+			업로드 파일의 이름을 리턴하는 메소드
+			를 가져오는 String 변수값을
+			
+			"TITLE=%s&DESCRIPTION=%s&FILE_NAME=%s", title, description,fileName
+			
+			방식으로 넣어준다.
+==============================================================
