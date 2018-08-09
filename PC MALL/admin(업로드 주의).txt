@@ -3,7 +3,7 @@
 Tomcat v8.0 Server at localhost에 있는
 open launch configuration클릭해서
 argument클릭해서
-Dwtp.deploy에 있는 경로에서
+Dwtp.deploy에 있는 경로(=서비스 저장소)에서
 
 application.getRealPath("/files/" + fileName);
 
