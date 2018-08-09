@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html;charset=utf-8"
+<%@ page language="java" contentType="text/html;charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ page import="org.apache.log4j.*" %>
 
-<%
-	Logger logger = Logger.getLogger(this.getClass());
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,7 +9,7 @@
 </head>
 <body>
 	<%request.setCharacterEncoding("UTF-8");%>
-	
+
 	제목:	${param.TITLE }<br>
 	설명:	${param.DESCRIPTION }<br>
 	파일:	${param.FILE_NAME }<br>
