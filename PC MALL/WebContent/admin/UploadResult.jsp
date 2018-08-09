@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>2018. 8. 8. 업로드 보여주는 화면</title>
-</head>
+</head> 
 <body>
 	<%request.setCharacterEncoding("UTF-8");%>
 
