@@ -68,6 +68,9 @@
 						<tr>
 							<td><a href="../board/reply_list.jsp"> &nbsp;자유게시판</a></td>
 						</tr>
+												<tr>
+							<td><a href="../board/reply_list.jsp"> &nbsp;회원게시판</a></td>
+						</tr>
 						<tr>
 							<td><a href="../service/inform_01.jsp"> &nbsp;FAQ</a></td>
 						</tr>
