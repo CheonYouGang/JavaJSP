@@ -1,5 +1,16 @@
 <%@ page contentType="text/html;charset=utf-8" import="java.sql.*,oracle.dbpool.*"  %>
 
+<%
+     if( session.getAttribute("pid") == null) {
+%>
+	 <script language="Javascript">
+		 alert("로그인을 하세요")
+		location.href="../member/login.jsp";
+     </script>
+ <%
+	 } else {
+%>
+
 <HTML>
 	<HEAD><TITLE>컴퓨터전문쇼핑몰</TITLE>
 	</HEAD>
@@ -12,7 +23,7 @@
 <br>
 	<table border=1 width=550 height=30 bordercolor=black>
 		<tr>
-			<td align=center bgcolor=0063ce><font size=3 color=#FFFFFF><b>자 유 게 시 판</b></td>
+			<td align=center bgcolor=0063ce><font size=3 color=#FFFFFF><b>회 원 게 시 판</b></td>
 		</tr>
 	</table>
 	<br>
@@ -25,7 +36,7 @@
 			<td width=60 align="center">조회수</td>
 		</tr>
 <%!   
-	int pagesize = 20;  // 한페이지당 10개 출력물
+	int pagesize = 10;  // 한페이지당 10개 출력물
 	int pageNUM=1;    // 페이지 번호
 	int pagecount=1 ; // 페이지 갯수 지정 변수
 	int absolutepage=1;  // 절대 위치 페이지 번호
@@ -36,12 +47,12 @@
 		DBConnectionManager pool = DBConnectionManager.getInstance();
 		Connection con = pool.getConnection("ora8");
  
-		String  b_name, b_email, b_title, b_content, b_date, mailto;
-		int  b_id =0 , b_hit = 0, level=0, color=1 ;
+		String  l_name, l_email, l_title, l_content, l_date, mailto;
+		int  l_id =0 , l_hit = 0, level=0, color=1 ;
 
 		// DB 행의 수 계산
 		Statement stmt = con.createStatement();  
-		ResultSet pageset = stmt.executeQuery("select count(b_id) from re_board");
+		ResultSet pageset = stmt.executeQuery("select count(l_id) from board");
 		if( pageset.next()){
 			dbcount = pageset.getInt(1); 
 			pageset.close();
@@ -60,9 +71,9 @@
 			ii = ii - (pageNUM-1)*pagesize;
 		}
 
-		String sql = "select b_id, b_name, b_email, b_title, b_content, ";
-		sql = sql + " to_char(b_date,'yy-mm-dd'), b_hit, ref, step, anslevel "; 
-		sql = sql + " from re_board order by ref desc, step ";
+		String sql = "select l_id, l_name, l_email, l_title, l_content, ";
+		sql = sql + " to_char(l_date,'yy-mm-dd'), l_hit, ref, step, anslevel "; 
+		sql = sql + " from board order by ref desc, step ";
 		sql = sql.toUpperCase().trim();
 		ResultSet rs = stmt.executeQuery(sql);
 
@@ -70,24 +81,24 @@
 		int k=1;
 
 		while(rs.next() && k<=pagesize){ 
-			b_id=rs.getInt(1);			//글번호
-			b_name=rs.getString(2);		// 글쓴이
-			b_email=rs.getString(3);	//작성자 메일
-			b_title=rs.getString(4);	// 글제목
-			b_content=rs.getString(5);	//글내용
-			b_date=rs.getString(6);		//작성날짜
-			b_hit=rs.getInt(7);			// 조회수
+			l_id=rs.getInt(1);			//글번호
+			l_name=rs.getString(2);		// 글쓴이
+			l_email=rs.getString(3);	//작성자 메일
+			l_title=rs.getString(4);	// 글제목
+			l_content=rs.getString(5);	//글내용
+			l_date=rs.getString(6);		//작성날짜
+			l_hit=rs.getInt(7);			// 조회수
 			level=rs.getInt(10);		//글 레벨
-			if(!b_email.equals("")) {
-			mailto="<a href=mailto:"+b_email+">"+b_name+"</a>";
+			if(!l_email.equals("")) {
+			mailto="<a href=mailto:"+l_email+">"+l_name+"</a>";
 			} else {
-				mailto=b_name; 
+				mailto=l_name; 
 			}
             ii--;
  %>
 		<tr height=22 bgcolor=ffffff onMouseOver=this.style.backgroundColor='#FFF8DE'  onMouseOut=this.style.backgroundColor='#FFFFFF'>
 			<td width=50 align=center><%= ii %></td>
-			<td width=230 align="left"><a href='show.jsp?b_id=<%= b_id %>'>
+			<td width=230 align="left"><a href='show.jsp?b_id=<%= l_id %>'>
 <%			
 				if(level>0) { 
 					for(int i = 0; i< level; i++){
@@ -99,10 +110,10 @@
 <% 
                 } 
  %> 
-             <%=b_title%></a></td>
-			 <td width=100 align=center><%=b_date%></td>
-			 <td width=100 align=center><%=b_name%></td>
-			 <td width=60 align=center><%=b_hit%></td>
+             <%=l_title%></a></td>
+			 <td width=100 align=center><%=l_date%></td>
+			 <td width=100 align=center><%=l_name%></td>
+			 <td width=60 align=center><%=l_hit%></td>
 		  </tr>
 <%
 		k++;
@@ -153,13 +164,14 @@
 %>
 			</td>
 			<td width=180 height=30 valign=middle align=right>
-			<a href="write_form.jsp"><img src="img/m_bt10.gif" border=0 align=absmiddle></a>
-			<a href="board_list.jsp"><img src="img/m_bt06.gif" border=0 align=absmiddle></a>
+			<a href="write_form_m.jsp"><img src="img/m_bt10.gif" border=0 align=absmiddle></a>
+			<a href="board_list_m.jsp"><img src="img/m_bt06.gif" border=0 align=absmiddle></a>
 			</td>
 			<td width=10>&nbsp;</td>
 		</tr>
 	</table>
 </form>
 	<jsp:include page="../common/basic_copyright.jsp" flush="true"/>
+<% } %>
 </body>
 </html>

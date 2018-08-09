@@ -7,19 +7,19 @@ DBConnectionManager pool = DBConnectionManager.getInstance();
 Connection con = pool.getConnection("ora8");//인자값 jdbc
  
 	
-	int b_id=0;
+	int l_id=0;
 
-	String b_name=makeKOR(request.getParameter("name"));
+	String l_name=makeKOR(request.getParameter("name"));
     String pwd= makeKOR(request.getParameter("pwd"));
-	String b_email=request.getParameter("email");
-	String b_title=makeKOR(request.getParameter("title"));
-	String b_content=makeKOR(request.getParameter("body"));
+	String l_email=request.getParameter("email");
+	String l_title=makeKOR(request.getParameter("title"));
+	String l_content=makeKOR(request.getParameter("body"));
 	String ip = request.getRemoteAddr(); // IP 알아내기
 
 
  //쿼리에 '가 들어가면 에러가 발생하므로 replace 처리해준다.
- b_title = Replace(b_title,"'","''");
- b_content = Replace(b_content,"'","''");
+ l_title = Replace(l_title,"'","''");
+ l_content = Replace(l_content,"'","''");
 
 
 	 /* 답변형에서 추가된 부분 */
@@ -28,23 +28,23 @@ Connection con = pool.getConnection("ora8");//인자값 jdbc
         int step=0;
         int level=0;
 
-    String sql = "select max(b_id),max(ref) from re_board";
+    String sql = "select max(l_id),max(ref) from board";
 	Statement stmt=con.createStatement();
 	ResultSet rs=stmt.executeQuery(sql);  
 	if(rs.next()) {
-		b_id=rs.getInt(1); 
-		b_id=b_id+1;    
+		l_id=rs.getInt(1); 
+		l_id=l_id+1;    
    		maxref=rs.getInt(2); // 글 항목 최대값 반환
 		rs.close();
 	} else {
-		b_id=1;   
+		l_id=1;   
 	}
  
-        if(request.getParameter("b_id") !=null) { 
+        if(request.getParameter("l_id") !=null) { 
              ref=Integer.parseInt(request.getParameter("ref"));
              step=Integer.parseInt(request.getParameter("step"));
              level=Integer.parseInt(request.getParameter("level"));
-     String str="update re_board set step=step+1 where ref="+ref+" and step > "+ step;
+     String str="update board set step=step+1 where ref="+ref+" and step > "+ step;
    			stmt.executeUpdate(str);
    			stmt.close();
             step=step+1;
@@ -57,14 +57,14 @@ Connection con = pool.getConnection("ora8");//인자값 jdbc
         }        
 
 
-	sql = "insert into re_board values(?,?,?,?,?,?,sysdate,?,?,?,?,?)";
+	sql = "insert into board values(?,?,?,?,?,?,sysdate,?,?,?,?,?)";
 	PreparedStatement pstmt = con.prepareStatement(sql);
-	pstmt.setInt(1,b_id);
-	pstmt.setString(2,b_name);
+	pstmt.setInt(1,l_id);
+	pstmt.setString(2,l_name);
 	pstmt.setString(3,pwd);
-	pstmt.setString(4,b_email);
-	pstmt.setString(5,b_title);
-	pstmt.setString(6,b_content);
+	pstmt.setString(4,l_email);
+	pstmt.setString(5,l_title);
+	pstmt.setString(6,l_content);
     pstmt.setInt(7,0);
     pstmt.setString(8, ip);
     pstmt.setInt(9,ref);

@@ -73,11 +73,14 @@ function MM_showHideLayers() { //v3.0
   </table>
 </div>
 
-<div id="qna" style="position:absolute; left:600px; top:99px; width:100px; height:20px; z-index:100; visibility: hidden"> 
-  <table width=170 border=0 cellspacing=2 cellpadding=0 height=20>
+<div id="qna" style="position:absolute; left: 532px; top: 93px; width:100px; height:20px; z-index:100; visibility: hidden"> 
+  <table width=250 border=0 cellspacing=2 cellpadding=0 height=20>
     <tr bgcolor="#EAEAEA">        
-      <td width=90 onMouseOver="this.style.backgroundColor='#cdcdcd'" onMouseOut="this.style.backgroundColor=''"> 
+      <td width=120 onMouseOver="this.style.backgroundColor='#cdcdcd'" onMouseOut="this.style.backgroundColor=''"> 
 	<div align=center><span class="layerstyle"><a href="../board/board_list.jsp">자유게시판</a></span> </div>
+      </td>
+      <td width=120 onMouseOver="this.style.backgroundColor='#cdcdcd'" onMouseOut="this.style.backgroundColor=''"> 
+	<div align=center><span class="layerstyle"><a href="../board/mem_board_list.jsp">회원게시판</a></span> </div>
       </td>
       <td width=80 onMouseOver="this.style.backgroundColor='#cdcdcd'" onMouseOut="this.style.backgroundColor=''"> 
         <div align=center class="layerstyle"><a href="../service/inform_01.jsp">F A Q</a></div>
