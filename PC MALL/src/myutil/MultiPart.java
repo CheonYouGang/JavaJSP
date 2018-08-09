@@ -16,11 +16,11 @@ public class MultiPart {
 	
 	//생성자
 	public MultiPart(HttpServletRequest request) throws Exception{
-		request.setCharacterEncoding("utf-8"); //utf-8화
-		
 		FileItemFactory factory = new DiskFileItemFactory();
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		items = upload.parseRequest(request);
+		
+		request.setCharacterEncoding("UTF-8"); //utf-8화
 	}
 	
 	//주어진 이름에 해당하는 데이터 값을 받아오는 메소드
@@ -29,7 +29,7 @@ public class MultiPart {
 			for(int cnt = 0; cnt < items.size(); cnt++) {
 				FileItem item = (FileItem)items.get(cnt);
 				if(item.getFieldName().equals(fieldName))
-					return item.getString("utf-8");
+					return item.getString("UTF-8");
 			}
 			return null;
 	}
