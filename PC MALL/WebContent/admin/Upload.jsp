@@ -6,7 +6,7 @@
 
 
 <%
-	request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8"); 
 
 	//객체를 생성
 	MultiPart multiPart = new MultiPart(request);
