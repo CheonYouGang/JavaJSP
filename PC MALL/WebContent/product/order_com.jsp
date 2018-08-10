@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8"  
             import="java.sql.*,oracle.dbpool.*" %>
 
-<% request.setCharacterEncoding("euc-kr"); %>
+<% request.setCharacterEncoding("UTF-8"); %>
 <%
 	DBConnectionManager pool=DBConnectionManager.getInstance();
 	Connection con = pool.getConnection("ora8");
@@ -13,8 +13,8 @@
 	String mess = request.getParameter("message");
 
 	String sql = " update basket set  gubun='"+rr+"' ,message='"+mess+"' where user_id ='"+user_id+"'";
-	String sql1 = "update member set mem_email=?, mem_address=?, mem_phone=? ";
-			 sql1 = sql1 + " where mem_uid ='"+user_id+"'";
+	String sql1 = "update member set m_email=?, m_address=?, m_phone=? ";
+			 sql1 = sql1 + " where M_UID ='"+user_id+"'";
 	try{
 		Statement stmt = con.createStatement();
 		stmt.executeUpdate(sql);

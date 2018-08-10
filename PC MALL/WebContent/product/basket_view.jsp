@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" import="java.sql.*,oracle.dbpool.*"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%
      if( session.getAttribute("pid") == null) {
@@ -65,8 +66,8 @@ try {
 			<input type=submit value="수정">
 		</td>
 	</form>
-		<td  bgcolor="#e2edfa" align=right width=70><%= price %>원</td>
-		<td bgcolor="#e2edfa" width=70 align=right><%= price*qty %> 원</td>
+		<td  bgcolor="#e2edfa" align=right width=70><fmt:formatNumber value="<%=price%>" pattern="#,###" />&nbsp;원</td>
+		<td bgcolor="#e2edfa" width=70 align=right><fmt:formatNumber value="<%=price*qty%>" pattern="#,###" />&nbsp;원</td>
 	<form method=post action="basket_delete.jsp?productnum=<%=id%>">
 		<td width=1 bgcolor="#e2edfa">
 		<input type=hidden name="id" value="<%=id%>">
