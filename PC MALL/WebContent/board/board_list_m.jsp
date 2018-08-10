@@ -3,7 +3,7 @@
 <HTML>
 	<HEAD><TITLE>컴퓨터전문쇼핑몰</TITLE>
 	</HEAD>
-	<link href="../common/u3.css" type=text/css rel=stylesheet>
+	<link href="../common/u4.css" type=text/css rel=stylesheet>
 
 <BODY leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
     <jsp:include page="../common/basic_screen.jsp" flush="true"/>
@@ -12,7 +12,7 @@
 <br>
 	<table border=1 width=550 height=30 bordercolor=black>
 		<tr>
-			<td align=center bgcolor=0063ce><font size=3 color=#FFFFFF><b>자 유 게 시 판</b></td>
+			<td align=center bgcolor=0063ce><font size=3 color=#FFFFFF><b>회 원 게 시 판</b></td>
 		</tr>
 	</table>
 	<br>
@@ -136,7 +136,7 @@
 			 //페이지 번호 나열하기
 			for(int i=startPage ; i<(startPage+limit);i++){
 				if( i == pageNUM){%>
-					&nbsp;<%=i%>&nbsp;
+					<font color="blue" style="text-decoration: underline;"><b><%=i%></b></font>
 <% 
 				} else { 
 %>

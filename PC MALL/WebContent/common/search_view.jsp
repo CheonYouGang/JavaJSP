@@ -16,7 +16,7 @@
 
 	Statement stmt=con.createStatement();
 	Statement stmt1=con.createStatement();
-	String s_word=new String(request.getParameter("srch_word").getBytes("8859_1"),"euc-kr");
+	String s_word=new String(request.getParameter("srch_word").getBytes("8859_1"),"UTF-8");
 
 	try {
 		String name,company_id,expression,photo,category;

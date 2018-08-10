@@ -19,18 +19,11 @@ td {
 
 a:hover {
 	border-bottom-width: 0px; border-left-width: 0px; border-right-width: 
-	0px; border-top-width: 0px; color: red; text-decoration: none; image-decoration: none
+	0px; border-top-width: 0px; color: white; text-decoration: none; image-decoration: none;
+	background-color: black;
 }
-a:active
-{
-	border-bottom-width: 0px; border-left-width: 0px; border-right-width: 
-	0px; border-top-width: 0px; color: green; text-decoration: none; image-decoration: none
-}
-a:visited{
-	border-bottom-width: 0px; border-left-width: 0px; border-right-width: 
-	0px; border-top-width: 0px; color: blue; text-decoration: none; image-decoration: none
-}
+
 a:link {
 	border-bottom-width: 0px; border-left-width: 0px; border-right-width: 
-	0px; border-top-width: 0px; text-decoration: none; image-decoration: none
+	0px; border-top-width: 0px; text-decoration: none; image-decoration: none;
 }

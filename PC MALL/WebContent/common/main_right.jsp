@@ -229,7 +229,7 @@
 		<td width=65 height=70 align=left valign=middle><A href="../product/product.jsp?i=<%= id %>">
           <img src="../product/image/<%= photo %>" width=60 height=60 border=0></A></td>
 		<td width=100><a href="../product/product.jsp?i=<%= id %>">[<%= name %>]</a><br>
-          <font class="P9" color=red>[<%= price %>&nbsp;원]</font></td>
+          <font class="P9" color=red>[<fmt:formatNumber value="${fmtPrice}" pattern="#,###" />&nbsp;원]</font></td>
 	</tr>
 	<tr>
 		<td colspan= 2 width=170><%= expression%></td>
